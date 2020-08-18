@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"/>
+<title>smartphone test</title>
+</head>
+<body>
+<p>スマホで絵を描こう！</p>
+<canvas id="canvas" width="600" height="600"></canvas>
+<script>
+let canvas=document.getElementById("canvas");
+let ctx=canvas.getContext("2d");
+let mouseEffect=false;
+ctx.fillStyle="black";
+onmousedown=()=>{
+mouseEffect=true;
+}
+onmouseup=()=>{
+mouseEffect=false;
+}
+canvas.onmousemove=(e)=>{
+if(mouseEffect)
+ctx.fillRect(e.offsetX,e.offsetY,1,1);
+}
+//for iphone
+ontouchstart=()=>{
+mouseEffect=true;
+}
+ontouchend=()=>{
+mouseEffect=false;
+}
+canvas.ontouchmove=(e)=>{
+if(mouseEffect)
+ctx.fillRect(e.offsetX,e.offsetY,1,1);
+}
+</script>
+<body>
+</html>
