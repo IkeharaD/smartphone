@@ -20,7 +20,7 @@ mouseEffect=false;
 }
 canvas.onmousemove=(e)=>{
 if(mouseEffect)
-ctx.fillRect(e.offsetX,e.offsetY,1,1);
+ctx.fillRect(e.offsetX,e.offsetY,10,10);
 }
 //for iphone
 ontouchstart=()=>{
@@ -31,7 +31,7 @@ mouseEffect=false;
 }
 canvas.ontouchmove=(e)=>{
 if(mouseEffect)
-ctx.fillRect(e.offsetX,e.offsetY,1,1);
+ctx.fillRect(e.offsetX,e.offsetY,10,10);
 }
 </script>
 <style>
