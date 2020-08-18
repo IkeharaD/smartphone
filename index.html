@@ -11,6 +11,8 @@
 let canvas=document.getElementById("canvas");
 let ctx=canvas.getContext("2d");
 let mouseEffect=false;
+ctx.fillStyle="green";
+ctx.fillRect(0,0,600,600);
 ctx.fillStyle="black";
 onmousedown=()=>{
 mouseEffect=true;
@@ -34,12 +36,5 @@ if(mouseEffect)
 ctx.fillRect(e.offsetX,e.offsetY,10,10);
 }
 </script>
-<style>
-canvas{
-position:fixed;
-top:0px;
-left:0px;
-}
-</style>
 <body>
 </html>
