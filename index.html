@@ -25,13 +25,16 @@ if(mouseEffect)
 ctx.fillRect(e.offsetX,e.offsetY,10,10);
 }
 //for iphone
-ontouchstart=()=>{
+ontouchstart=(e)=>{
+e.preventDefault();
 mouseEffect=true;
 }
-ontouchend=()=>{
+ontouchend=(e)=>{
+e.preventDefault();
 mouseEffect=false;
 }
 canvas.ontouchmove=(e)=>{
+e.preventDefault();
 if(mouseEffect)
 ctx.fillRect(e.offsetX,e.offsetY,10,10);
 }
