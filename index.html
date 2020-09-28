@@ -7,37 +7,51 @@
 </head>
 <body>
 <p>スマホで絵を描こう！</p>
+<p id="x"></p>
+<p id="y"></p>
 <canvas id="canvas" width="600" height="600"></canvas>
 <script>
 let canvas=document.getElementById("canvas");
 let ctx=canvas.getContext("2d");
 let mouseEffect=false;
+let x=document.getElementById("x"),y=document.getElementById("y");
 ctx.fillStyle="green";
 ctx.fillRect(0,0,600,600);
 ctx.fillStyle="black";
-onmousedown=()=>{
-mouseEffect=true;
+canvas.onmousedown=(e)=>{
+e.preventDefault();
+//mouseEffect=true;
+x.textContent=e.offsetX;
+y.textContent=e.offsetY;
 }
-onmouseup=()=>{
+/*onmouseup=(e)=>{
+e.preventDefault();
 mouseEffect=false;
-}
+}*/
 canvas.onmousemove=(e)=>{
-if(mouseEffect)
-ctx.fillRect(e.offsetX,e.offsetY,10,10);
+e.preventDefault();
+//if(mouseEffect)
+//ctx.fillRect(e.offsetX,e.offsetY,10,10);
+x.textContent=e.offsetX;
+y.textContent=e.offsetY;
 }
 //for iphone
-ontouchstart=(e)=>{
+canvas.ontouchstart=(e)=>{
 e.preventDefault();
-mouseEffect=true;
+//mouseEffect=true;
+x.textContent=e.offsetX;
+y.textContent=e.offsetY;
 }
-ontouchend=(e)=>{
+/*ontouchend=(e)=>{
 e.preventDefault();
 mouseEffect=false;
-}
-canvas.ontouchmove=(e)=>{
+}*/
+canvas.canvas.ontouchmove=(e)=>{
 e.preventDefault();
-if(mouseEffect)
-ctx.fillRect(e.offsetX,e.offsetY,10,10);
+//if(mouseEffect)
+//ctx.fillRect(e.offsetX,e.offsetY,10,10);
+x.textContent=e.offsetX;
+y.textContent=e.offsetY;
 }
 </script>
 <body>
