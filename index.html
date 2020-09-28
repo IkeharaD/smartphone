@@ -6,6 +6,7 @@
 <title>smartphone test</title>
 </head>
 <body>
+<p>スマホで絵を描こう！</p>
 <p id="x"></p>
 <p id="y"></p>
 <canvas id="canvas" width="600" height="600"></canvas>
@@ -20,8 +21,8 @@ ctx.fillStyle="black";
 canvas.onmousedown=(e)=>{
 e.preventDefault();
 //mouseEffect=true;
-x.textContent=e.offsetX;
-y.textContent=e.offsetY;
+x.textContent=e.pageX;
+y.textContent=e.pageY;
 }
 /*onmouseup=(e)=>{
 e.preventDefault();
@@ -31,15 +32,15 @@ canvas.onmousemove=(e)=>{
 e.preventDefault();
 //if(mouseEffect)
 //ctx.fillRect(e.offsetX,e.offsetY,10,10);
-x.textContent=e.offsetX;
-y.textContent=e.offsetY;
+x.textContent=e.pageX;
+y.textContent=e.pageY;
 }
 //for iphone
 canvas.ontouchstart=(e)=>{
 e.preventDefault();
 //mouseEffect=true;
-x.textContent=e.offsetX;
-y.textContent=e.offsetY;
+x.textContent=e.touches[0].pageX;
+y.textContent=e.touches[0].pageY;
 }
 /*ontouchend=(e)=>{
 e.preventDefault();
@@ -49,8 +50,8 @@ canvas.ontouchmove=(e)=>{
 e.preventDefault();
 //if(mouseEffect)
 //ctx.fillRect(e.offsetX,e.offsetY,10,10);
-x.textContent=e.offsetX;
-y.textContent=e.offsetY;
+x.textContent=e.touches[0].pageX;
+y.textContent=e.touches[0].pageY;
 }
 </script>
 <body>
