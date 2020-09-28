@@ -31,7 +31,7 @@ mouseEffect=false;
 canvas.onmousemove=(e)=>{
 e.preventDefault();
 //if(mouseEffect)
-//ctx.fillRect(e.offsetX,e.offsetY,10,10);
+ctx.fillRect(e.offsetX,e.offsetY,10,10);
 x.textContent=e.pageX;
 y.textContent=e.pageY;
 }
@@ -49,7 +49,7 @@ mouseEffect=false;
 canvas.ontouchmove=(e)=>{
 e.preventDefault();
 //if(mouseEffect)
-//ctx.fillRect(e.offsetX,e.offsetY,10,10);
+ctx.fillRect(e.touches[0].pageX-canvas.getBoundingClientRect().x,e.touches[0].pageY-canvas.getBoundingClientRect().y,10,10);
 x.textContent=e.touches[0].pageX;
 y.textContent=e.touches[0].pageY;
 }
